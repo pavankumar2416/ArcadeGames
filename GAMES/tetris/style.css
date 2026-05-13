@@ -1,0 +1,186 @@
+/* ===== GLOBAL ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at top, #1f1f3a, #0d0d16 70%);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+/* ===== GAME CONTAINER ===== */
+
+.game-container {
+  width: 380px;
+  padding: 25px;
+  border-radius: 25px;
+  background: rgba(20, 20, 35, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.3),
+    0 0 50px rgba(0,255,255,0.1);
+  text-align: center;
+  border: 2px solid rgba(0,255,255,0.2);
+  animation: glow 3s infinite alternate;
+}
+
+/* ===== TITLE ===== */
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+  color: #00ffff;
+  text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+}
+
+/* ===== GAME BOARD ===== */
+
+canvas {
+  background: linear-gradient(to bottom, #000000, #111122);
+  border: 4px solid #00ffff;
+  border-radius: 12px;
+  box-shadow:
+    0 0 15px #00ffff,
+    inset 0 0 20px rgba(0,255,255,0.2);
+}
+
+/* ===== SCORE AREA ===== */
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.info h2 {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  font-size: 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.05);
+}
+
+/* ===== BUTTONS ===== */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  color: white;
+}
+
+/* Pause Button */
+
+#pauseBtn {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  box-shadow: 0 0 15px rgba(255,152,0,0.5);
+}
+
+#pauseBtn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(255,152,0,0.8);
+}
+
+/* Reset Button */
+
+#resetBtn {
+  background: linear-gradient(135deg, #ff1744, #d50000);
+  box-shadow: 0 0 15px rgba(255,23,68,0.5);
+}
+
+#resetBtn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(255,23,68,0.8);
+}
+
+/* ===== CONTROLS ===== */
+
+.controls {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.controls p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #cccccc;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes glow {
+  from {
+    box-shadow:
+      0 0 20px rgba(0,255,255,0.2),
+      0 0 40px rgba(0,255,255,0.05);
+  }
+
+  to {
+    box-shadow:
+      0 0 30px rgba(0,255,255,0.4),
+      0 0 60px rgba(0,255,255,0.15);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 500px) {
+
+  .game-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  .info {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
